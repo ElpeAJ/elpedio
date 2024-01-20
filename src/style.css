@@ -124,6 +124,10 @@ footer {
   /* margin-left: 5px; */
 }
 
+main {
+  padding: 30px 15px;
+}
+
   .weatherAppData {
     /* width: 80%;
     max-width: 90%; */
