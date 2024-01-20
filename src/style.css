@@ -97,11 +97,49 @@ footer {
 
 @media only screen and (max-width: 489px) {
   /* Your styles for small phones */
+
+  .search-form-input {
+  background-color: #f9f7fe;
+  border: none;
+  border-radius: 6px;
+  width: 60%;
+  padding: 17px 20px;
+}
+.search-form-submit {
+  background-color: #885df1;
+  padding: 17px 20px;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-size: 14px;
+  /* margin-left: 5px; */
+}
+
   .weatherAppData {
-    width: 80%;
-    max-width: 90%;
+    /* width: 80%;
+    max-width: 90%; */
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
   }
+
+  .weatherAppIcon {
+  font-size: 39px;
+  margin-top: 21px;
 }
+
+.weatherAppTemperatureValue {
+  font-size: 88px;
+  font-weight: bold;
+  /* margin-left: 10px; */
+}
+
+.weatherAppUnit {
+  margin-top: 15px;
+  font-size: 28px;
+}
+
+
+}
+
+
