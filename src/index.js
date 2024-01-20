@@ -1,20 +1,47 @@
-function changeWeather(response){
+function changeWeather(response) {
   let cityElement = document.querySelector("#weatherAppCity");
   let actualTemp = response.data.temperature.current;
-  let temperatureValueElement = document.querySelector("#weatherAppTemperatureValue");
+  let temperatureValueElement = document.querySelector(
+    "#weatherAppTemperatureValue"
+  );
   let descriptionElement = document.querySelector("#description");
   let descriptionResponse = response.data.condition.description;
   let humidityElement = document.querySelector("#humidity");
   let actualHumidity = response.data.temperature.humidity;
   let windinessElement = document.querySelector("#windiness");
   let actualWindiness = response.data.wind.speed;
+  let timeElement = document.querySelector("#time");
+  let actualTime = response.data.time; // The value given is a time stamp (milliseconds since 1970)
   cityElement.innerHTML = response.data.city;
   temperatureValueElement.innerHTML = Math.round(actualTemp);
   descriptionElement.innerHTML = descriptionResponse;
   humidityElement.innerHTML = `${actualHumidity}%`;
   windinessElement.innerHTML = `${actualWindiness}km/h`;
-  
-  // console.log(response.data);
+  actualTime = new Date(actualTime * 1000);
+  // timeElement.innerHTML = `${actualTime.getDay()} ${actualTime.getHours()}:${actualTime.getMinutes()},`;
+  timeElement.innerHTML = formateDate(actualTime);
+  console.log(response.data);
+}
+
+function formateDate(time) {
+  let hour = time.getHours();
+  let mins = time.getMinutes();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[time.getDay()];
+
+  if (mins < 10){
+    mins = `0${mins}`;
+  }
+  return `${day} ${hour}:${mins}, `;
+  // console.log(day);
 }
 
 function searchCity(city) {
