@@ -128,9 +128,14 @@ footer {
     /* width: 80%;
     max-width: 90%; */
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     flex-direction: column;
   }
+
+  .weatherAppTemperatureContainer {
+  display: flex;
+  justify-content: center;
+}
 
   .weatherAppIcon {
   font-size: 39px;
