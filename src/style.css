@@ -34,7 +34,7 @@ a {
   color: rgba(39, 66, 39, 0.49);
 }
 
-.weatherAppDetails span {
+.weatherAppDetails .pinkish {
   color: #f65282;
 }
 
@@ -93,4 +93,15 @@ footer {
   padding-top: 30px;
   text-align: center;
   font-size: 0.85rem;
+}
+
+@media only screen and (max-width: 489px) {
+  /* Your styles for small phones */
+  .weatherAppData {
+    width: 80%;
+    max-width: 90%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+  }
 }
