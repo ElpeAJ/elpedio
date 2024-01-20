@@ -29,14 +29,18 @@
       <main>
         <div class="weatherAppData">
           <div>
-            <h1>Paris</h1>
-            <p>
+            <h1 class="weatherAppCity">Paris</h1>
+            <p class="weatherAppDetails">
               Tuesday 14:49, scattered clouds
               <br />
-              Humidity: 66%, Wind: 3.13km/h
+              Humidity: <span>66%</span>, Wind: <span>3.13km/h</span>
             </p>
           </div>
-          <div>🌥️ 12&degC</div>
+          <div class="weatherAppTemperatureContainer">
+            <div class="weatherAppIcon">🌥️</div>
+            <div class="weatherAppTemperatureValue">12</div>
+            <div class="weatherAppUnit">&degC</div>
+          </div>
         </div>
       </main>
       <footer>
