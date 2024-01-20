@@ -43,8 +43,11 @@ a {
 }
 
 .weatherAppIcon {
-  font-size: 39px;
-  margin-top: 21px;
+  /* font-size: 39px;
+  margin-top: 21px; */
+  width: 100px;
+  height: 100px;
+  
 }
 
 .weatherAppTemperatureValue {
@@ -142,18 +145,22 @@ main {
 }
 
   .weatherAppIcon {
-  font-size: 39px;
-  margin-top: 21px;
+  /* font-size: 39px;
+  margin-top: 21px; */
+  width: 88px;
+  height: 88px;
+  
 }
 
 .weatherAppTemperatureValue {
   font-size: 88px;
+  line-height: 88px;
   font-weight: bold;
   /* margin-left: 10px; */
 }
 
 .weatherAppUnit {
-  margin-top: 15px;
+  margin-top: 8px;
   font-size: 28px;
 }
 

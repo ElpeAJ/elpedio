@@ -12,6 +12,8 @@ function changeWeather(response) {
   let actualWindiness = response.data.wind.speed;
   let timeElement = document.querySelector("#time");
   let actualTime = response.data.time; // The value given is a time stamp (milliseconds since 1970)
+  let iconElement = document.querySelector("#icon");
+
   cityElement.innerHTML = response.data.city;
   temperatureValueElement.innerHTML = Math.round(actualTemp);
   descriptionElement.innerHTML = descriptionResponse;
@@ -20,6 +22,7 @@ function changeWeather(response) {
   actualTime = new Date(actualTime * 1000);
   // timeElement.innerHTML = `${actualTime.getDay()} ${actualTime.getHours()}:${actualTime.getMinutes()},`;
   timeElement.innerHTML = formateDate(actualTime);
+  iconElement.innerHTML = `<img class="weatherAppIcon" src="${response.data.condition.icon_url}">`;
   console.log(response.data);
 }
 
@@ -37,7 +40,7 @@ function formateDate(time) {
   ];
   let day = days[time.getDay()];
 
-  if (mins < 10){
+  if (mins < 10) {
     mins = `0${mins}`;
   }
   return `${day} ${hour}:${mins}, `;
