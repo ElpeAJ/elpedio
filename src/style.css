@@ -98,6 +98,26 @@ footer {
   font-size: 0.85rem;
 }
 
+.weatherForecast{
+  margin-top: 20px;
+  text-align: center;
+}
+
+.weatherForecastDate{
+  font-size: 16px;
+  color:#6c6e70;
+}
+
+.weatherForecastTemperatures{
+  font-size: 13px;
+  
+}
+
+.weatherForecastTemperatureMin{
+  color:#6c6e70;
+  
+}
+
 @media only screen and (max-width: 489px) {
   /* Your styles for small phones */
 

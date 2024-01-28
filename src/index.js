@@ -23,7 +23,7 @@ function changeWeather(response) {
   // timeElement.innerHTML = `${actualTime.getDay()} ${actualTime.getHours()}:${actualTime.getMinutes()},`;
   timeElement.innerHTML = formateDate(actualTime);
   iconElement.innerHTML = `<img class="weatherAppIcon" src="${response.data.condition.icon_url}">`;
-  console.log(response.data);
+  console.log(response);
 }
 
 function formateDate(time) {
