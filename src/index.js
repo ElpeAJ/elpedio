@@ -23,7 +23,8 @@ function changeWeather(response) {
   // timeElement.innerHTML = `${actualTime.getDay()} ${actualTime.getHours()}:${actualTime.getMinutes()},`;
   timeElement.innerHTML = formateDate(actualTime);
   iconElement.innerHTML = `<img class="weatherAppIcon" src="${response.data.condition.icon_url}">`;
-  console.log(response);
+  // console.log(response);
+  getForecast(response.data.city);
 }
 
 function formateDate(time) {
@@ -69,10 +70,15 @@ function handleSearch(event) {
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearch);
 
-searchCity("Accra");
 
-function displayForecast() {
+function getForecast(city) {
+  let apiKey = "797fbe35412tode87c30b05aa524b37f";
+  let apiURL = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}`;
+  axios.get(apiURL).then(displayForecast);
+}
 
+function displayForecast(response) {
+  // console.log(response.data);
   let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
   let allForecastHTML = "";
   days.forEach(function(day){
@@ -96,5 +102,13 @@ function displayForecast() {
   forecastElement.innerHTML = allForecastHTML;
 }
 
+// function getForecast() {
+//   let apiKey = "797fbe35412tode87c30b05aa524b37f";
+//   let apiURL = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}`;
+//   axios.get(apiURL).then(displayForecast);
+// }
+searchCity("Accra");
+// getForecast("Accra");
 displayForecast();
+
 
