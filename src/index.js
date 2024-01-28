@@ -70,3 +70,31 @@ let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearch);
 
 searchCity("Accra");
+
+function displayForecast() {
+
+  let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
+  let allForecastHTML = "";
+  days.forEach(function(day){
+
+    allForecastHTML = allForecastHTML +  `
+    <div class="col-2">
+      <div class="weatherForecastDate">${day}</div>
+      <img
+        src="http://openweathermap.org/img/wn/50d@2x.png"
+        alt="img"
+        width="29"
+      />
+      <div class="weatherForecastTemperatures">
+        <span class="weatherForecastTemperatureMax">12&deg</span>
+        <span class="weatherForecastTemperatureMin">34&deg</span>
+      </div>
+    </div>
+`;
+  }); 
+  let forecastElement = document.querySelector("#forecast #oneRow");
+  forecastElement.innerHTML = allForecastHTML;
+}
+
+displayForecast();
+
