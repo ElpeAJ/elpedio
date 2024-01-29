@@ -43,8 +43,8 @@ a {
 }
 
 .weatherAppIcon {
-  /* font-size: 39px;
-  margin-top: 21px; */
+  /* font-size: 39px; */
+  margin-top: 21px;
   width: 100px;
   height: 100px;
 }
@@ -53,6 +53,9 @@ a {
   font-size: 88px;
   font-weight: bold;
   margin-left: 10px;
+  /* display: flex;
+  justify-content: center; */
+  align-self: center;
 }
 
 .weatherAppUnit {
@@ -115,7 +118,6 @@ footer {
 }
 
 @keyframes blink {
-
   0% {
     background-color: #f9f7fe;
     border: 1px solid white;
@@ -131,7 +133,7 @@ footer {
     color: #6c6e70;
   }
   100% {
-    color:#6c6e70;    
+    color: #6c6e70;
   }
 }
 
@@ -208,10 +210,9 @@ footer {
   }
 
   .weatherAppIcon {
-    /* font-size: 39px;
-  margin-top: 21px; */
-    width: 88px;
-    height: 88px;
+    width: 128px;
+    height: 128px;
+    margin-top: 11px;
   }
 
   .weatherAppTemperatureValue {
@@ -226,13 +227,33 @@ footer {
     font-size: 28px;
   }
 
-  #oneRow{
+  #oneRow {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  #oneRow .eaColumn{
-    width: 50%;
+  #oneRow .eaColumn {
+    width: 85%;
+  }
+
+  .eaColumn:first-child {
+    border-radius: 8px 8px 0px 0px;
+  }
+
+  .eaColumn:last-child {
+    border-radius: 0px 0px 8px 8px;
+  }
+
+  .weatherForecastImage img {
+    width: 79px;
+  }
+
+  .weatherForecastTemperatureMax {
+    font-size: 16px;
+  }
+
+  .weatherForecastTemperatureMin {
+    font-size: 16px;
   }
 }
