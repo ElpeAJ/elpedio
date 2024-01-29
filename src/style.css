@@ -108,23 +108,25 @@ footer {
 .weatherForecastDate {
   font-size: 16px;
   color: #6c6e70;
-  animation: pulse 20000ms ease-in-out infinite;
+  animation: pulse 2000ms ease-in-out infinite;
 }
 
 .eaColumn {
-  /* border: 1px solid #F9F7FE; */
+  border: 1px solid rgb(195, 195, 95);
   background-color: #f9f7fe;
-  animation: blink ease-in-out 20000ms infinite;
+  animation: blink ease-in-out 2000ms infinite;
 }
 
 @keyframes blink {
   0% {
     background-color: #f9f7fe;
-    border: 1px solid white;
+    /* border: 1px solid white; */
+    border: 2px solid #885DF1;
   }
   100% {
     background-color: white;
     border: 1px solid #f9f7fe;
+    /* border: 2px solid rgb(195, 195, 95); */
   }
 }
 
@@ -161,6 +163,13 @@ footer {
 .weatherForecastTemperatureMin {
   color: #6c6e70;
   font-size: 14px;
+}
+
+.level{
+  font-style: italic;
+  font-size: 10px;
+  color: rgb(44, 63, 42);
+  opacity: 0.6;
 }
 
 @media only screen and (max-width: 489px) {
@@ -266,7 +275,7 @@ footer {
   box-shadow: 0 30px 50px rgba(65, 50, 100, 0.1);
   border-radius: 19px;
   aspect-ratio: 3 / 1.5;
-  background-color: rgb(138, 142, 145);
+  background-color: rgb(134, 134, 134);
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -275,7 +284,7 @@ footer {
 
 #weatherAppData,
 #weatherForecast {
-  background-color: rgb(71, 72, 73);
+  background-color: rgb(133, 134, 135);
 }
 
 #weatherAppData {
@@ -295,7 +304,8 @@ footer {
   border-radius: 10px;
   animation: skeleton-blink ease-in-out 2000ms infinite;
 }
-#weatherForecast > div{
+#weatherForecast div,
+#weatherAppData div{
   border: 1px solid rgb(154, 154, 154);
 }
 
