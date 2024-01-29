@@ -44,6 +44,9 @@ function formateDate(time) {
   if (mins < 10) {
     mins = `0${mins}`;
   }
+  if (hour === 0){
+    hour = `0${hour}`;
+  }
   return `${day} ${hour}:${mins}, `;
   // console.log(day);
 }
@@ -70,6 +73,13 @@ function handleSearch(event) {
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearch);
 
+function formatDay(timestamp){
+  let date = new Date(timestamp * 1000);
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[date.getDay()];
+
+}
 
 function getForecast(city) {
   let apiKey = "797fbe35412tode87c30b05aa524b37f";
@@ -79,24 +89,34 @@ function getForecast(city) {
 
 function displayForecast(response) {
   // console.log(response.data);
-  let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
+  // let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
+  let days = response.data.daily;
   let allForecastHTML = "";
-  days.forEach(function(day){
+  days.forEach(function(day, index){
+    if (index > 0 && index < 7){
 
-    allForecastHTML = allForecastHTML +  `
-    <div class="col-2">
-      <div class="weatherForecastDate">${day}</div>
+    allForecastHTML =
+      allForecastHTML +
+      `
+    <div class="col-2 eaColumn" >
+      <div class="weatherForecastDate">${formatDay(day.time)}</div>
+      <div class="weatherForecastImage">
       <img
-        src="http://openweathermap.org/img/wn/50d@2x.png"
+      src ="${day.condition.icon_url}"
         alt="img"
-        width="29"
+        
       />
+      </div>
       <div class="weatherForecastTemperatures">
-        <span class="weatherForecastTemperatureMax">12&deg</span>
-        <span class="weatherForecastTemperatureMin">34&deg</span>
+        <span class="weatherForecastTemperatureMax">${Math.round(
+          day.temperature.maximum
+        )}&deg</span>
+        <span class="weatherForecastTemperatureMin">${Math.round(
+          day.temperature.minimum
+        )}&deg</span>
       </div>
     </div>
-`;
+`;}
   }); 
   let forecastElement = document.querySelector("#forecast #oneRow");
   forecastElement.innerHTML = allForecastHTML;
