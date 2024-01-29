@@ -1,4 +1,6 @@
 function changeWeather(response) {
+  document.querySelector(".skeleton").classList.add("hide");
+  document.querySelector(".weatherAppData").classList.remove("hide");
   let cityElement = document.querySelector("#weatherAppCity");
   let actualTemp = response.data.temperature.current;
   let temperatureValueElement = document.querySelector(

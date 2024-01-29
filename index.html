@@ -35,7 +35,22 @@
         </form>
       </header>
       <main>
-        <div class="weatherAppData">
+        <div class="skeleton">
+          <div id="weatherAppData">
+            <div></div>
+            <div></div>
+          </div>
+          <div id="weatherForecast">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+
+        <div class="weatherAppData hide">
           <div>
             <h1 class="weatherAppCity" id="weatherAppCity"><!--Paris--></h1>
             <p class="weatherAppDetails">
@@ -43,7 +58,8 @@
               <span id="description"><!--scattered clouds--></span>
               <br />
               Humidity: <span class="pinkish" id="humidity"><!--66%--></span>,
-              Wind: <span class="pinkish" id="windiness"><!--3.13km/h--></span>
+              Wind:
+              <span class="pinkish" id="windiness"><!--3.13km/h--></span>
             </p>
           </div>
           <div class="weatherAppTemperatureContainer">

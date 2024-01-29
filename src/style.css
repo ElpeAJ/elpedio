@@ -257,3 +257,60 @@ footer {
     font-size: 16px;
   }
 }
+
+/* skeleton before API is called */
+.skeleton {
+  margin: 18px auto;
+  max-width: 80vw;
+  padding: 30px;
+  box-shadow: 0 30px 50px rgba(65, 50, 100, 0.1);
+  border-radius: 19px;
+  aspect-ratio: 3 / 1.5;
+  background-color: rgb(138, 142, 145);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+#weatherAppData,
+#weatherForecast {
+  background-color: rgb(71, 72, 73);
+}
+
+#weatherAppData {
+  width: 90%;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 10px;
+  animation: skeleton-blink ease-in-out 2000ms infinite;
+  
+}
+#weatherForecast {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  height: 100px;
+  border-radius: 10px;
+  animation: skeleton-blink ease-in-out 2000ms infinite;
+}
+#weatherForecast > div{
+  border: 1px solid rgb(154, 154, 154);
+}
+
+.hide {
+  display: none;
+}
+
+ @keyframes skeleton-blink {
+        0% {
+          background-color: rgb(169, 171, 171);
+        }
+        50% {
+          background-color: rgb(77, 77, 77);
+        }
+        100% {
+          background-color: rgb(127, 127, 128);
+        }
+      }
